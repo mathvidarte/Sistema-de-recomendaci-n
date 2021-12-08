@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="p5.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <h1>Similitud entre:</h1>
+        <section class="mainS__list">
+
+            <form>
+                <label for="nombreA" class="form__nombreA"><strong>NombreA</strong> </label>
+                <select id="nombreA" class="nombreA__input" name="nombreA">
+                </select>
+            </form>
+
+            <form>
+                <label for="nombreB" class="form__nombreA"><strong>NombreB</strong> </label>
+                <select id="nombreB" class="nombreB__input" name="nombreB">
+                </select>
+            </form>
+
+
+
+        </section>
+
+    </div>
+
+    <div>
+        <button onclick="calculate()">Calculate</button>
+    </div>
+
+    <div>
+        <h3 id="result"></h3>
+    </div>
+
+    <h1>Vencindario de usuarios:</h1>
+    <form>
+        <label for="nombreC" class="form__nombreC"><strong>NombreP</strong> </label>
+        <select id="nombreC" class="nombreC__input" name="nombreC">
+        </select>
+    </form>
+
+    <form>
+        <label for="k" class="form_k"><strong>k(usuarios)</strong> </label>
+        <select id="k" class="k__input" name="k">
+        </select>
+    </form>
+    <form>
+        <label for="agregation" class="form_agregation"><strong>Agregation</strong> </label>
+        <select id="agregation" class="agregation__input" name="agregation">
+            
+            <option value="naive">Naive average</option>
+            <option value="least">Least Misery</option>
+            <option value="maximum">Maximum Pleasure</option>
+            <option value="media">Media Satisfaction</option>
+
+        </select>
+    </form>
+
+    
+    <div style="display: flex;">
+        <button onclick="calculateVecinos()">Obtener Recomendación</button>
+    </div>
+    <div>
+        <h3>Administrador</h3>
+        <input type="range" min="0" max="100" value="100" id=slider0>
+
+        <h3>Mercadologo</h3>
+        <input type="range" min="0" max="100" value="100" id=slider1>
+
+        <h3>Comunicador</h3>
+        <input type="range" min="0" max="100" value="100" id=slider2>
+
+        <h3>Abogado</h3>
+        <input type="range" min="0" max="100" value="100" id=slider3>
+
+        <h3>Contador</h3>
+        <input type="range" min="0" max="100" value="100" id=slider4>
+
+        <h3>Ingeniero industrial</h3>
+        <input type="range" min="0" max="100" value="100" id=slider5>
+
+        <!--<h3>Tocineta</h3>
+        <input type="range" min="0" max="100" value="100" id=slider6>-->
+    </div>
+    <div class="results">
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="./User.js"></script>
+
+</body>
+
+</html>
