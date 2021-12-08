@@ -1,0 +1,32 @@
+body {
+    min-height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    padding: 30px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-sizing: border-box;
+    font-family: gilroy;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .container{
+    border-radius: 20px;
+    background-color: #353A56;
+    color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    padding: ;
+ 
+
+  }
+  .formStyle{
+    display: flex;
+    flex-direction: column;
+
+  }
