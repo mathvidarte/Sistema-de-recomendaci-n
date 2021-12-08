@@ -16,13 +16,33 @@ let users = [];
 let bootcamp = [];
 let similitudes = [];
 
+let medias;
+
+function cargarMedias(){
+
+    medias = new Map();
+  
+    let habilidades = file[0].split(',');
+    habilidades.forEach(habKey=>{
+
+        medias.set(habKey, {suma:0, total:file.length-1, media:0})
+
+    });
+  
+    
+
+}
+
 function preload() {
     file = loadStrings("./file/personas.csv");
-    file2 = loadStrings("./file/bootcamps.csv");
+    file2 = loadStrings("./file/bootcamps.csv");  
+
 }
 
 function setup() {
     splitCsv();
+    console.log(file[0]);
+    cargarMedias();
 }
 
 function splitCsv() {
@@ -37,7 +57,7 @@ function splitCsv() {
 
         }
         users.push(new User(name, arrayProb));
-        console.log(users);
+  
 
     }
 
