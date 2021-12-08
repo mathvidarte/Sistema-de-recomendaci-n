@@ -13,14 +13,12 @@ let arrayProb;
 var kNeighbors = [];
 
 let users = [];
-let pizzas = [];
+let bootcamp = [];
 let similitudes = [];
 
 function preload() {
     file = loadStrings("./file/personas.csv");
     file2 = loadStrings("./file/bootcamps.csv");
-    //console.log(file);
-    //console.log(file2);
 }
 
 function setup() {
@@ -53,11 +51,8 @@ function splitCsv() {
             arrayProb.push(parseInt(upload[j]));
 
         }
-        pizzas.push(new User(name, arrayProb));
-        //console.log(pizzas);
+        bootcamp.push(new User(name, arrayProb));
     }
-
-    //console.log(users);
 
     let size = users.length;
     let htmlString = "";
@@ -211,7 +206,7 @@ function getRecomendation(userP) {
     }
     
     results.innerHTML += htmlString;
-    calculatePizza(agregacion);
+    calculateBootCamp(agregacion);
     
     
 }
@@ -235,12 +230,12 @@ function getAgregacion(vectoresPeso) {
                 for (j = 0; j < vectoresPeso.length; j++) {
                     //console.log(vectoresPeso[j].name);
                     
-                    if(vectoresPeso[j][i] < 5) {
+                    if(vectoresPeso[j][i] == 1) {
                        //console.log("columna: "+i);
                        colum = i;
                     }
 
-                    vectoresPeso[j][colum]= 0;
+                    vectoresPeso[j][colum]= 1;
 
                     //console.log(vectoresPeso[j][i]);
                     sumCaracteristica += vectoresPeso[j][i];
@@ -282,12 +277,12 @@ function getAgregacion(vectoresPeso) {
                 for (j = 0; j < vectoresPeso.length; j++) {
                     //console.log(vectoresPeso[j].name);
                     
-                    if(vectoresPeso[j][i] >= 8) {
+                    if(vectoresPeso[j][i] == 0) {
                        //console.log("columna: "+i);
                        colum = i;
                     }
 
-                    vectoresPeso[j][colum]= 10;
+                    vectoresPeso[j][colum]= 0;
                     console.log(vectoresPeso[j].length);
                     //console.log(vectoresPeso[j][i]);
                     sumCaracteristica += vectoresPeso[j][i];
@@ -347,30 +342,30 @@ function getAgregacion(vectoresPeso) {
 
 }
 
-function calculatePizza(vectorAgregado) {
+function calculateBootCamp(vectorAgregado) {
 
-    let similitudesPizza=[];
+    let similitudesBoot=[];
     let k = parseInt(listK.options[listK.selectedIndex].value);
     let pizzaAgregation=new User('agregation', vectorAgregado);
- //console.log(pizzaAgregation);
-  pizzas.forEach(p => {
-            let similarity = findSimilarity(pizzaAgregation, p);
-            //objeto que tiene name,distancia,vector
-            similitudesPizza.push({ name: p.name, dist: similarity });
-    });
+    //console.log(pizzaAgregation);
+    bootcamp.forEach(p => {
+                let similarity = findSimilarity(pizzaAgregation, p);
+                //objeto que tiene name,distancia,vector
+                similitudesBoot.push({ name: p.name, dist: similarity });
+        });
 
 
-    similitudesPizza.sort(function comparator(u1, u2) {
-        return u2.dist - u1.dist;
-    });
-    //se parte 
-    similitudesPizza = similitudesPizza.slice(0, k);
-    let htmlString = '<h3> Pizza Recomendada </h3>';
-    for (let i = 0; i < k; i++) {
-        htmlString += ' <div>' + (i + 1) + ' ' + similitudesPizza[i].name + ' <strong>' + (similitudesPizza[i].dist * 100).toFixed(1)+'%' + '</strong></div>';
-    }
+        similitudesBoot.sort(function comparator(u1, u2) {
+            return u2.dist - u1.dist;
+        });
+        //se parte 
+        similitudesBoot = similitudesBoot.slice(0, 6);
+        let htmlString = '<h3> Pizza Recomendada </h3>';
+        for (let i = 0; i < 6; i++) {
+            htmlString += ' <div>' + (i + 1) + ' ' + similitudesBoot[i].name + ' <strong>' + (similitudesBoot[i].dist * 100).toFixed(1)+'%' + '</strong></div>';
+        }
 
-    results.innerHTML += htmlString;
+        results.innerHTML += htmlString;
 }
 
 function searchUser(name) {
