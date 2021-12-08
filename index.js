@@ -137,7 +137,7 @@ function calculateVecinos() {
     let position = searchUser(nombreP);
     //console.log(position);
     let userP = users[position];
-    //userP.caracteristicas = multiplicacionDePesos(userP);
+    userP.caracteristicas = multiplicacionDePesos(userP);
     //console.log(userP.caracteristicas);
 
     users.forEach(u => {
@@ -170,7 +170,7 @@ function calculateVecinos() {
 
 }
 
-/*function multiplicacionDePesos(userP) {
+function multiplicacionDePesos(userP) {
     let usuarioPeso = [];
 
     for (i = 0; i < userP.caracteristicas.length; i++) {
@@ -182,7 +182,7 @@ function calculateVecinos() {
 
     return usuarioPeso;
 
-}*/
+}
 
 function getRecomendation(userP) {
 
@@ -360,7 +360,7 @@ function calculateBootCamp(vectorAgregado) {
         });
         //se parte 
         similitudesBoot = similitudesBoot.slice(0, 6);
-        let htmlString = '<h3> Pizza Recomendada </h3>';
+        let htmlString = '<h3> Bootcamp Recomendado </h3>';
         for (let i = 0; i < 6; i++) {
             htmlString += ' <div>' + (i + 1) + ' ' + similitudesBoot[i].name + ' <strong>' + (similitudesBoot[i].dist * 100).toFixed(1)+'%' + '</strong></div>';
         }
