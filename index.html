@@ -20,25 +20,23 @@
         <section class="mainS__list">
 
             <form class ="formStyle">
-                <label for="nombreA" class="form__nombreA"><strong>NombreA</strong> </label>
-                <select id="nombreA" class="nombreA__input" name="nombreA">
+                <label for="nombreA" class="form__nombreA labelstyle"><strong>Nombre de Empresa 1</strong> </label>
+                <select id="nombreA" class="nombreA__input custom-select" name="nombreA">
                 </select>
             </form>
 
             <form class="formStyle">
-                <label for="nombreB" class="form__nombreA"><strong>NombreB</strong> </label>
-                <select id="nombreB" class="nombreB__input" name="nombreB">
+                <label for="nombreB" class="form__nombreA labelstyle"><strong>Nombre de empresa 2</strong> </label>
+                <select id="nombreB" class="nombreB__input custom-select" name="nombreB">
                 </select>
             </form>
-
-
 
         </section>
 
     </div>
 
     <div>
-        <button onclick="calculate()">Calculate</button>
+        <button class="button-27" onclick="calculate()">Calculate</button>
     </div>
 
     <div>
@@ -46,23 +44,23 @@
     </div>
 
     
-</section>
-
+</section >
+<section class = "container container__blue">
     <h1>Vencindario de usuarios:</h1>
-    <form>
-        <label for="nombreC" class="form__nombreC"><strong>NombreP</strong> </label>
-        <select id="nombreC" class="nombreC__input" name="nombreC">
+    <form class="formStyle">
+        <label for="nombreC" class="form__nombreC labelstyle"><strong>Nombre de la empresa</strong> </label>
+        <select id="nombreC" class=" nombreC__input custom-select" name="nombreC">
         </select>
     </form>
 
-    <form>
-        <label for="k" class="form_k"><strong>k(usuarios)</strong> </label>
-        <select id="k" class="k__input" name="k">
+    <form class="formStyle">
+        <label for="k" class="form_k labelstyle"><strong>Cantidad de empresas</strong> </label>
+        <select id="k" class="k__input custom-select" name="k">
         </select>
     </form>
-    <form>
-        <label for="agregation" class="form_agregation"><strong>Agregation</strong> </label>
-        <select id="agregation" class="agregation__input" name="agregation">
+    <form class="formStyle">
+        <label for="agregation" class="form_agregation labelstyle"><strong>Método de agregación</strong> </label>
+        <select id="agregation" class="agregation__input custom-select" name="agregation">
             
             <option value="naive">Naive average</option>
             <option value="least">Least Misery</option>
@@ -74,11 +72,11 @@
 
     
     <div style="display: flex;">
-        <button onclick="calculateVecinos()">Obtener Recomendación</button>
+        <button class="button-27" onclick="calculateVecinos()">Obtener Recomendación</button>
     </div>
     <div>
         <h3>Alta gestión y gerencia</h3>
-        <input type="range" min="0" max="100" value="100" id=slider0>
+        <input  class=" range-style "type="range" min="0" max="100" value="100" id=slider0>
 
         <h3>Estrategía y posicionamiento</h3>
         <input type="range" min="0" max="100" value="100" id=slider1>
@@ -114,8 +112,10 @@
         <input type="range" min="0" max="100" value="100" id=slider11>
 
     </div>
+    <h2> Resultados de empresas similares:</h2>
     <div class="results">
     </div>
+</section>
 
     <script src="./index.js"></script>
     <script src="./User.js"></script>
