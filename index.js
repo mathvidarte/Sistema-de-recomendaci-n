@@ -35,7 +35,7 @@ function cargarMedias(){
 
 function preload() {
     file = loadStrings("./file/personas.csv");
-    file2 = loadStrings("./file/bootcamps.csv");  
+    file2 = loadStrings("./file/bootcamps1.csv");  
 
 }
 
